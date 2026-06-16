@@ -23,6 +23,7 @@ currentEnvelope = num;
 // abrir modal SIEMPRE
 const modal = document.getElementById("letterView");
 modal.style.display = "flex";
+  lockScroll();
 
 
 // reset estado
@@ -56,7 +57,8 @@ document.getElementById("paperContent").innerText = letter.text;
 }
 
 function closeLetter(){
-
+unlockScroll();
+  
 document.getElementById("letterView").style.display = "none";
 
 // restaurar scroll
