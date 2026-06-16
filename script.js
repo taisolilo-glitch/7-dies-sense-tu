@@ -24,6 +24,7 @@ currentEnvelope = num;
 const modal = document.getElementById("letterView");
 modal.style.display = "flex";
 
+
 // reset estado
 document.getElementById("paperTitle").innerText = letters[num].title;
 document.getElementById("paperContent").innerText = "";
@@ -93,3 +94,12 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 });
+
+
+function lockScroll(){
+document.body.style.overflow = "hidden";
+}
+
+function unlockScroll(){
+document.body.style.overflow = "auto";
+}
