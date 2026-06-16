@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>7 dies sense tu</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<div class="header">
+  <h1>7 dies sense tu</h1>
+</div>
+
+<!-- =========================
+     COUNTDOWN
+========================= -->
+
+<div class="countdown-section">
+  <div id="countdown" class="countdown"></div>
+</div>
+
+<!-- =========================
+     CARTES
+========================= -->
+
+<div class="cards">
+
+  <div class="envelope" onclick="openEnvelope(1,this)">
+    <div class="letter">✉</div>
+    <div class="label">Primer dia</div>
+  </div>
+
+  <div class="envelope" onclick="openEnvelope(2,this)">
+    <div class="letter">✉</div>
+    <div class="label">Segon dia</div>
+  </div>
+
+  <div class="envelope" onclick="openEnvelope(3,this)">
+    <div class="letter">✉</div>
+    <div class="label">Tercer dia</div>
+  </div>
+
+  <div class="envelope" onclick="openEnvelope(4,this)">
+    <div class="letter">✉</div>
+    <div class="label">Quart dia</div>
+  </div>
+
+  <div class="envelope" onclick="openEnvelope(5,this)">
+    <div class="letter">✉</div>
+    <div class="label">Cinquè dia</div>
+  </div>
+
+  <div class="envelope" onclick="openEnvelope(6,this)">
+    <div class="letter">✉</div>
+    <div class="label">Sisè dia</div>
+  </div>
+
+  <div class="envelope" onclick="openEnvelope(7,this)">
+    <div class="letter">✉</div>
+    <div class="label">Setè dia</div>
+  </div>
+
+</div>
+
+<!-- =========================
+     MODAL CARTA
+========================= -->
+
+<div id="letterView" class="letter-view">
+
+  <div class="paper">
+
+    <span class="close-paper" onclick="closeLetter()">✕</span>
+
+    <h2 id="paperTitle"></h2>
+
+    <div id="paperContent"></div>
+
+    <input id="codeInput" type="text" placeholder="Introdueix el codi">
+
+    <button onclick="checkCode()">Obrir carta</button>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     SCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>=

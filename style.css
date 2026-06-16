@@ -1,0 +1,257 @@
+
+/* =========================
+   BASE
+========================= */
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:"Inter", sans-serif;
+background:#f3ede3;
+color:#2b2b2b;
+}
+
+/* =========================
+   HEADER (TÍTULO)
+========================= */
+
+.header{
+background:#e8dccb;
+padding:80px 20px;
+text-align:center;
+}
+
+.header h1{
+font-family:"Cormorant Garamond", serif;
+font-size:56px;
+margin:0;
+letter-spacing:1px;
+font-weight:500;
+color:#2b2b2b;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section{
+background:#f7f3ee;
+padding:30px 20px;
+text-align:center;
+
+border-top:1px solid rgba(0,0,0,0.05);
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.countdown{
+font-size:14px;
+letter-spacing:2px;
+color:#555;
+}
+
+.countdown b{
+font-family:"Cormorant Garamond", serif;
+font-size:22px;
+color:#2b2b2b;
+}
+
+/* =========================
+   CARTAS SECTION
+========================= */
+
+.cards{
+background:#e8dccb;
+padding:60px 20px;
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:24px;
+}
+
+/* =========================
+   SOBRES
+========================= */
+
+.envelope{
+width:320px;
+height:140px;
+
+background:#fffdf8;
+
+border-radius:16px;
+
+border:1px solid rgba(0,0,0,0.06);
+
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+position:relative;
+
+cursor:pointer;
+
+transition:0.3s ease;
+}
+
+.envelope:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* icono */
+.letter{
+font-size:28px;
+opacity:0.7;
+color:#444;
+}
+
+/* etiqueta */
+.label{
+position:absolute;
+bottom:12px;
+right:14px;
+
+font-size:12px;
+letter-spacing:0.5px;
+
+color:#666;
+opacity:0.8;
+}
+
+/* =========================
+   MODAL CARTA
+========================= */
+
+.letter-view{
+position:fixed;
+inset:0;
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+background:rgba(0,0,0,0.85);
+
+z-index:99999;
+}
+
+/* carta */
+.paper{
+position:relative;
+
+width:90%;
+max-width:650px;
+
+background:#fffdf8;
+
+padding:50px;
+
+border-radius:20px;
+
+box-shadow:0 30px 80px rgba(0,0,0,0.15);
+
+font-family:"Cormorant Garamond", serif;
+
+animation:openPaper 0.35s ease;
+}
+
+/* animación */
+@keyframes openPaper{
+from{
+transform:translateY(10px) scale(0.98);
+opacity:0;
+}
+to{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+}
+
+/* título carta */
+.paper h2{
+margin-top:0;
+font-size:28px;
+}
+
+/* texto carta */
+#paperContent{
+font-size:19px;
+line-height:1.7;
+white-space:pre-wrap;
+color:#333;
+margin-top:15px;
+}
+
+/* =========================
+   INPUT + BOTÓN
+========================= */
+
+input{
+width:100%;
+padding:12px;
+
+border-radius:10px;
+
+border:1px solid rgba(0,0,0,0.1);
+
+margin-top:15px;
+
+font-size:14px;
+
+outline:none;
+}
+
+button{
+margin-top:10px;
+
+padding:12px 16px;
+
+border:none;
+
+border-radius:10px;
+
+background:#2b2b2b;
+
+color:#fff;
+
+cursor:pointer;
+
+transition:0.3s;
+
+font-family:inherit;
+}
+
+button:hover{
+opacity:0.85;
+}
+
+/* =========================
+   BOTÓN CERRAR
+========================= */
+
+.close-paper{
+position:absolute;
+top:16px;
+right:18px;
+
+font-size:20px;
+
+cursor:pointer;
+
+color:#666;
+
+transition:0.2s;
+
+user-select:none;
+}
+
+.close-paper:hover{
+color:#000;
+}
