@@ -1,8 +1,4 @@
 
-/* =========================
-   BASE
-========================= */
-
 *{
 box-sizing:border-box;
 }
@@ -15,7 +11,7 @@ color:#2b2b2b;
 }
 
 /* =========================
-   HEADER (TÍTULO)
+   HEADER
 ========================= */
 
 .header{
@@ -28,9 +24,7 @@ text-align:center;
 font-family:"Cormorant Garamond", serif;
 font-size:56px;
 margin:0;
-letter-spacing:1px;
 font-weight:500;
-color:#2b2b2b;
 }
 
 /* =========================
@@ -41,7 +35,6 @@ color:#2b2b2b;
 background:#f7f3ee;
 padding:30px 20px;
 text-align:center;
-
 border-top:1px solid rgba(0,0,0,0.05);
 border-bottom:1px solid rgba(0,0,0,0.05);
 }
@@ -59,7 +52,7 @@ color:#2b2b2b;
 }
 
 /* =========================
-   CARTAS SECTION
+   CARTAS
 ========================= */
 
 .cards{
@@ -72,9 +65,7 @@ justify-content:center;
 gap:24px;
 }
 
-/* =========================
-   SOBRES
-========================= */
+/* sobres */
 
 .envelope{
 width:320px;
@@ -96,12 +87,11 @@ position:relative;
 
 cursor:pointer;
 
-transition:0.3s ease;
+transition:0.3s;
 }
 
 .envelope:hover{
 transform:translateY(-6px);
-box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
 /* icono */
@@ -116,16 +106,13 @@ color:#444;
 position:absolute;
 bottom:12px;
 right:14px;
-
 font-size:12px;
-letter-spacing:0.5px;
-
 color:#666;
 opacity:0.8;
 }
 
 /* =========================
-   MODAL CARTA
+   MODAL
 ========================= */
 
 .letter-view{
@@ -140,13 +127,17 @@ align-items:center;
 background:rgba(0,0,0,0.85);
 
 z-index:99999;
+
+/* 🔥 FIX MÓVIL */
+overflow-y:auto;
+padding:20px;
 }
 
 /* carta */
 .paper{
 position:relative;
 
-width:90%;
+width:100%;
 max-width:650px;
 
 background:#fffdf8;
@@ -160,6 +151,10 @@ box-shadow:0 30px 80px rgba(0,0,0,0.15);
 font-family:"Cormorant Garamond", serif;
 
 animation:openPaper 0.35s ease;
+
+/* 🔥 CLAVE */
+max-height:90vh;
+overflow-y:auto;
 }
 
 /* animación */
@@ -174,68 +169,44 @@ opacity:1;
 }
 }
 
-/* título carta */
-.paper h2{
-margin-top:0;
-font-size:28px;
-}
-
-/* texto carta */
+/* contenido */
 #paperContent{
 font-size:19px;
 line-height:1.7;
 white-space:pre-wrap;
-color:#333;
 margin-top:15px;
+color:#333;
 }
 
-/* =========================
-   INPUT + BOTÓN
-========================= */
-
+/* input */
 input{
 width:100%;
 padding:12px;
 
 border-radius:10px;
-
 border:1px solid rgba(0,0,0,0.1);
 
 margin-top:15px;
 
 font-size:14px;
-
-outline:none;
 }
 
+/* botón */
 button{
 margin-top:10px;
 
 padding:12px 16px;
 
 border:none;
-
 border-radius:10px;
 
 background:#2b2b2b;
-
 color:#fff;
 
 cursor:pointer;
-
-transition:0.3s;
-
-font-family:inherit;
 }
 
-button:hover{
-opacity:0.85;
-}
-
-/* =========================
-   BOTÓN CERRAR
-========================= */
-
+/* cerrar */
 .close-paper{
 position:absolute;
 top:16px;
@@ -246,12 +217,23 @@ font-size:20px;
 cursor:pointer;
 
 color:#666;
-
-transition:0.2s;
-
-user-select:none;
 }
 
 .close-paper:hover{
 color:#000;
+}
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width:600px){
+.paper{
+padding:30px 22px;
+border-radius:16px;
+}
+
+.header h1{
+font-size:38px;
+}
 }
