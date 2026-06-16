@@ -66,7 +66,9 @@ justify-content:center;
 gap:24px;
 }
 
-/* sobres */
+/* =========================
+   SOBRES
+========================= */
 
 .envelope{
 width:320px;
@@ -107,6 +109,7 @@ color:#444;
 position:absolute;
 bottom:12px;
 right:14px;
+
 font-size:12px;
 color:#666;
 opacity:0.8;
@@ -122,25 +125,24 @@ inset:0;
 
 display:none;
 
-justify-content:center;
-align-items:center;
-
 background:rgba(0,0,0,0.85);
 
 z-index:99999;
 
-padding:20px;
+padding:40px 20px;
+
+overflow-y:auto;
 }
 
 /* =========================
-   CARTA (SCROLL INTERNO)
+   CARTA
 ========================= */
 
 .paper{
-position:relative;
-
 width:100%;
 max-width:650px;
+
+margin:60px auto;
 
 background:#fffdf8;
 
@@ -152,25 +154,8 @@ box-shadow:0 30px 80px rgba(0,0,0,0.15);
 
 font-family:"Cormorant Garamond", serif;
 
-/* 🔥 CLAVE */
-max-height:85vh;
-overflow-y:auto;
-
--webkit-overflow-scrolling:touch;
-
-animation:openPaper 0.35s ease;
-}
-
-/* animación */
-@keyframes openPaper{
-from{
-transform:translateY(10px) scale(0.98);
-opacity:0;
-}
-to{
-transform:translateY(0) scale(1);
-opacity:1;
-}
+max-height:none;
+overflow:visible;
 }
 
 /* contenido */
