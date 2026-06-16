@@ -131,8 +131,14 @@ z-index:99999;
 
 padding:40px 20px;
 
+/* 🔥 clave */
 overflow-y:auto;
+
+display:flex;
+align-items:flex-start;
+justify-content:center;
 }
+
 
 /* =========================
    CARTA
@@ -142,7 +148,7 @@ overflow-y:auto;
 width:100%;
 max-width:650px;
 
-margin:60px auto;
+margin:40px 0;
 
 background:#fffdf8;
 
@@ -154,15 +160,20 @@ box-shadow:0 30px 80px rgba(0,0,0,0.15);
 
 font-family:"Cormorant Garamond", serif;
 
-max-height:none;
-overflow:visible;
+/* 🔥 CLAVE */
+min-height:fit-content;
+height:auto;
 }
 
 /* contenido */
 #paperContent{
 font-size:19px;
 line-height:1.7;
+
 white-space:pre-wrap;
+word-wrap:break-word;
+overflow-wrap:break-word;
+
 margin-top:15px;
 color:#333;
 }
