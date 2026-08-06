@@ -5,7 +5,7 @@ const letters = {
 
 2:{code:"SENDOKAI",title:"Segon dia",text:"Bon dia mi amor! com estas? Espero que la primera nit no hagi sigut molt dura, per a mi si que ho ha sigut perquè és dissabte i no m'he despertat amb tu[...]
 
-3:{code:"DISASOCIAR",title:"Tercer dia",text:"Bon dia amor, com has dormit? Ja només queden 4 dies per a que tornis a casa, i no puc esperar a veure't. Espero que estiguis passant-ho súper bé (i[...]
+3:{code:"DISASOCIAR",title:"Tercer dia",text:"Bon dia amor, com has dormit? Ja només queden 4 dies per a que tornis a casa, i no puc esperar a veure't. Espero qu'estiguis passant-ho súper bé (i[...]
 
 4:{code:"PANCHIPANCHI",title:"Quart dia",text:"Hola panchi panchi, et trobo molt a faltar :((, és totalment inhumà no tenir-te aprop, i encara em queden tres dies per tornar a veure't. Espero qu[...]
 
@@ -61,13 +61,34 @@ document.getElementById("paperContent").innerText = letter.text;
 function closeLetter(){
 unlockScroll();
   
-document.getElementById("letterView").style.display = "none";
+const modal = document.getElementById("letterView");
+if(modal) modal.style.display = "none";
 
 // restaurar scroll
 document.body.style.overflow = "auto";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+
+// Ensure modal is hidden on load (avoid it showing by default)
+const modal = document.getElementById("letterView");
+if(modal) {
+  // If CSS didn't hide it, force hide until openEnvelope is called
+  modal.style.display = "none";
+  // Close when clicking overlay (but not when clicking inside the modal content)
+  modal.addEventListener('click', function(e){
+    if(e.target === modal) closeLetter();
+  });
+}
+
+// Attach click handlers to common close button selectors so the X works
+["#closeLetterBtn", "#close", "#closeBtn", ".close", ".close-btn", "[data-close]"]
+  .forEach(function(sel){
+    try{
+      const btn = document.querySelector(sel);
+      if(btn) btn.addEventListener('click', closeLetter);
+    }catch(e){ /* ignore invalid selectors like [data-close] if absent */ }
+  });
 
 function updateCountdown(){
 
